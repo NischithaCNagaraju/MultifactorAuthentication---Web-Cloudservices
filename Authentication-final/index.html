@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Authentication</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/script.js"></script>
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<style>
+.sidenav {
+  height: 100%;
+  width: 240px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:  #006666;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 30px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: black;
+}
+
+.main {
+  margin-left: 240px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+code { 
+  font-color: red;
+}
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+ 
+<!--header-->
+<header>
+<figure id="picl">
+<a href="images/sidelogo.png"><img src="images/sidelogo.png" id="picl" width="75px" height="75px" align = "left" ></a>
+</figure>
+<h1>
+Authentication Featuring Web & Cloud services
+</h1>
+<figure >
+<a href="images/cloud.jpg"><img src="images/cloud.jpg" id="picr" align = "right" width="75px" height="75px"></a>
+</figure>
+</header><br>
+
+<!-- end of header -->
+
+
+
+<!--menu
+<nav id="menu">
+    <ul>
+    <li><a style="color:white;" href="#review">Review Of Authentication</a></li>
+    <li><a style="color:white;" href="register.html">Authentication In Different Devices</a></li>
+    <li><a style="color:white;" href="video.html">Overview Of Cloud Services That Do Authentication</a></li>
+    <li><a style="color:white;" href="audio.html">Implementation</a></li>
+    </ul>
+</nav>-->
+<div class="sidenav">
+  <a href="#wrapper"><img id="fprint" src="images/fingerprint.png" alt="" width= "150px" height= "120px"></a>
+  <a href="#review">Review Of Authentication</a>
+  <a href="#devices">Authentication In Different Devices</a>
+  <a href="#devices"><li>Mobile</li></a>
+  <a href="#devices"><li>IoT</li></a>
+  <a href="#cloud"><li>Cloud</li></a>
+  <a href="#twofactor">Two Factor Authentication</a>
+  <a href="#implementation">Implementation</a>
+  <a href="#future">Future Of Authentication</a>
+  <a href="#reference">Reference</a>
+  
+</div>
+<!-- end of menu --> 
+
+<!-- Article post -->
+<section>
+<article style="text-align:justify">
+ 
+<figure>
+      <img id="intro" src="images/intro.jpg"  alt="" width= "300px" height= "300px">
+</figure>
+<!-- Introduction to Authentication -->
+
+<h2>Review Of Authentication</h2>
+<p id="review" >
+Authentication is the process of determining whether someone or something is, in fact, who or what it declares itself to be. <br><br>
+<b>Why is Authentication important?</b><br>
+   Authentication is important because it enables organizations to keep their networks secure by permitting only authenticated users (or processes) to access its protected resources, which may include computer systems, networks, databases, websites and other network-based applications or services.
+<br>Accountability  -  The ability to unambiguously associate a consequence with a past action of an individual or an organization.  Facilitating accountability, which is the ability to associate a consequence with a past improper action of an individual. Thus, the authentication process must unambiguously identify one and only one individual who will be held accountable for improper actions.
+</p>
+<p id="review"><b>3 common ways of authenticating</b>
+<ul style= "font-size:17px"><li><b>Something You Know:</b>
+This can be a PIN, password, key, pet’s name etc. it is the most common authentication implemented today,also one of the cheapest authentication mechanisms.</li>
+<b><li>Something You Have:</b><br>authentication happens with ownership<br>
+An access id card, credit card, RSA token, security badge are all examples of things you can own, In case this badge is stolen or lost, this could be an issue in those cases.
+</li>
+<li><b>Something You Are:</b><br>Here the authentication happens with YOU (characteristic). Your physical attribute is used to authenticate you. Characteristics such as 
+fingerprints, voice print, iris scan, palm print etc. are examples of characteristics or biometrics.An issue with this can be you can never change your characteristics if
+someone gets hold of your biometrics, unlike a password which can be changed.</li></ul></p>
+
+</article>
+<!-- End of Introduction to Authentication -->
+
+
+<!-- Devices -->
+<article id="devices" style="text-align:justify">
+<h3>Authetication in different Devices</h3>
+<p id="mobileiot"><li><b>Mobile Authentication:</b><br>
+Mobile authentication is the verification of a user’s identity through the use of a mobile device and one or more authentication methods for secure access. Mobile devices can also be used as one of the authentication levels in other multiple authentication methods such as software-based security applications on a mobile device generate an OTP to the device for signing on. Authentication techniques such as Slide Lock
+Number Lock, Pin code and Password, Biometric Based Authentication, Graphical Based Password, Fingerprint Recognition, Iris Recognition, Speaker Recognition, Location based and  face recognition are being more commonly used techniques for mobile devices. 
+</li><br>
+<li><b>IoT</b><br>
+Each IoT device is strongly authenticated using any unique identity while any other device is trying to connect to its IoT gateway or central server.
+There are many dimensions in IoT authentication considering hardware limitations, cost consciousness  and operating environment. Most embedded systems implement device authentication methods that depend on a software-based approach.
+Popular examples are use of MAC (Message Authentication Code) to enable secure key exchange for device authentication over constrained IoT protocols, also light-weight adaptations of PKI and OAuth2 protocols to match the scope and scale of IoT use-cases.
+</li></p>
+<p>Below picture showcase how an IoT device (smart watch) is being authenticated via bluetooth with the smart mobile to seek privileges to operate.</p><br>
+<img id="iot" src="images/IoT.png" alt="" width="450px" height="240px">
+</p>
+<li id="pc"><b>Authentication in PCs</b><br>
+ There are a number of applications to secure your personal computer or Desktop, One being entering username and Password .
+Encrypting laptop’s Hard drive makes it impossible to read or retrieve all  data, whether sensitive or not. Even if the hard drive is removed from the machine and reinstalled in another laptop, desktop or even test bed, the data still cannot be recovered.
+Many other tools/ applications like Safeboot & SaaSPaas are in use to are used to authenticate PCs.</li>
+
+
+</article>
+<!-- end of Devices -->
+
+
+<!-- Cloud services -->
+<article id="cloud" style="text-align:justify">
+
+<h3><b>Overview Of Cloud Services & Authentication</b></h3>
+<p><b>What is Cloud Service</b></p>
+<img id="cloudservice" src="images/cloudservice.png" alt="" width="350px" height="270px">
+
+<p>It refers to applications and services offered over the Internet. These services are offered from data centers all over the world, which collectively are referred to as the "cloud." This metaphor represents the intangible, yet universal nature of the Internet.
+The idea of the "cloud" simplifies the many network connections and computer systems involved in online services.
+</p>
+<p>Examples of cloud computing include online backup services, social networking services, and personal data services such as Apple's MobileMe. Cloud computing also includes online applications, such as those offered through Microsoft Online Services. Hardware services, such as redundant servers, mirrored websites, and Internet-based clusters </p>
+
+<p><b>Types Of Cloud Services</b>
+<p>Saas - Finished applications designed for end-users and delivered over the web
+<br> PaaS -Platform as a service (PaaS) is a cloud computing model in which a third-party provider delivers hardware and software tools -- usually those needed for application development 
+<br> IaaS - Infrastructure as a Service (IaaS) is a method of delivering computing, storage, networking and other capabilities via the Internet <br><br>
+<iframe style="margin-left:80px" width="440" height="215" src="https://www.youtube.com/embed/36zducUX16w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen align ="center"></iframe></p>
+<br><a style="margin-left:120px" href="https://youtu.be/36zducUX16w"><b>Types Of Cloud Services </b>-https://youtu.be/36zducUX16w</a><br>
+</p><br><br>
+
+
+<p><b>Cloud Computing Deployment Model</b></p>
+<img  src="images/clouddeployment.png" style="margin-left:160px"  alt="" width="400px" height="350px">
+
+<p><b>Authentication In Cloud services</b></p>
+<p>Due to the nature of outsourced computing or the shared nature of data there is a disadvantage of data security of the cloud system 
+There are three important factors of cloud security requirements, these are confidentiality, integrity and availability widely called as CIA.
+<ul><li><b>Confidentiality</b> - protection of data from unauthorized disclosure preserving control on organizations’ data situated across multiple servers.</li>
+<li><b>Integrity</b> - the assurance that data received is as sent by an authorized entity i.e. no unauthorized person can fabricate, modify and delete sensitive information in cloud servers.</li>
+<li><b>Availability</b>- To ensure that only authorized person can access to shared information in cloud service provider</li></ul>
+
+<p><b>Authentication Techniques</b></p>
+<!--<img  src="images/acloud.png" style="margin-left:160px"  alt="" width="350px" height="300px">-->
+<p><ol><li><b>Username and Password Authentication :</b><br>
+    Username and password are required to access information in the CSP .
+    This technique fails in providing a higher and reliable security because it is tough to check whether the request is from the authorized user
+    Password to get stolen by brute force and dictionary attacks.<br>Various protocols have been presented that can allow a user to use a single password authentication to recognize in numerous services securely.These protocols prevent users against dictionary attack, cross-site attack, malware and phishing.
+ </li>
+<li><b>Multifactor Authentication : </b><br>
+This technique does not just validate the username and password pair but also requires another factor e.g. biometric authentication.
+For cloud computing a multifactor biometric authentication system was proposed that includes finger print and palm vein. Keeping the data of fingerprint in the central database of the cloud security server and the biometric data of palm vein in multi-component smart cards.
+</li>
+<li><b>Trusted Computing Group (TCG)</b><br>
+It enables secure computing.
+A set of conditions to store, measure, and report software and hardware integrity were introduced by Trusted Computing Group (TCG) through a hardware root-of-trust.
+</li>
+<li><b>Single Sign On</b><br>
+The SSO is a method of accessing the multiple independent software system in such a manner.
+that when a user logs in a system, without being provoked to re-login in each application, gains the access to all the system.
+Supports users to access numerous services and reduce the threat for the administrators to direct users practically. By preventing the user to remember many passwords, it helps to improve user efficiency and decreases the amount of time the user puts in typing numerous passwords to login.
+</li>
+<li><b>Public Key Infrastructure</b><br>
+
+Is based on the secret key and mainly supports the placement of traditional asymmetric cryptographic algorithms, for example, RSA.
+The security characteristics of cloud environment have been proposed that uses combination of SSO, Public Key Infrastructure, cryptography techniques, as well as LDAP, to guarantee the integrity, authentication and confidentiality of data and communications.
+PKI plays a key role in security and authentication of users in a distributed environment like that of mobile cloud computing, cloud computing and wireless sensor network.
+In cloud computing, security of data is the most important issue that needs to be addressed.
+Authentication of user becomes an important issue in cloud computing in order to protect the critical information in cloud service providers.
+</li></ol>
+</p>
+
+</article>
+
+<!-- end of Cloud services -->
+
+
+
+<!-- Two factor Authetication -->
+<article id="twofactor" style="text-align:justify">
+<h4>Two Factor Authentication</h4>
+<p>Two-factor authentication (2FA),is a security process in which users provide two different authentication factors to verify themselves. 
+It  is done to better protect both the user's credentials and the resources the user can access. Two-factor authentication provides a higher level 
+of assurance than authentication methods that depend on single-factor authentication (SFA), in which the user provides only one factor -- typically, a password or passcode. Two-factor authentication methods rely on a user providing a password, as well as a second factor, usually either a security token or a biometric factor, such as a fingerprint or facial scan.
+</p>
+<iframe style="margin-left:80px" width="440" height="215" src="https://www.youtube.com/embed/mMKo-fG89jQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br><a style="margin-left:120px" href="https://youtu.be/mMKo-fG89jQ"><b>Two factor Authentication </b>-https://youtu.be/mMKo-fG89jQ</a><br>
+</article><br><br>
+<!-- end of Two factor Authentication -->
+
+
+<!-- Implementation -->
+<article id="implementation" style="text-align:justify">
+<h5>Implementation Using Google Authenticator</h5>
+
+<p>Passwords can be guessed, phone numbers can be spoofed, but using two-factor authentication essentially requires that the user be in possession of a 
+physical device with an app like Google Authenticator, loaded with a secret key for the given app, which provides an extra layer of security.
+</p>
+<p><b>TwoFactor authentication using Node.js:</b><br><br>
+ TOTP (Time-based One Time Password)<br>
+	It is defined in <a href="https://tools.ietf.org/html/rfc6238">RFC 6238.</a> Many open-source implementations for both the client-side and server-side components are available. Google has developed Google Authenticator,  an application that is freely available for Android, iOS and the web. This application  generates TOTP  that can be integrated easily into our developments. 
+	We will explore how to do so in the following sections
+<br><ol><li>Enrollment: Enabling 2FA for a specific user.</li>
+<li>Login: Using 2FA to log in</li></ol><br>
+<img  src="images/twofactor.png" style="margin-left:160px"  alt="" >
+
+<p>Passport.js is authentication middleware for node.js. The concept of strategies are used for authentication. It includes wide variety of strategies which involves verifying username, password along with using OAuth( Twitter, Facebook, Linkedin) or any OpenID.
+<br><br>Install:<br><br>
+	<code style="color:red">npm install passport</code><br><br>
+<b>Usage:</b><br>
+	To use Passport in an Express or Connect-based application, configure it with the required passport.initialize() middleware.<br>
+	<code style="color:red">var app = express();<br>
+	app.use(passport.initialize());</code><br><br>
+<b>Maintaining Session:</b><br>
+Login sessions will be persistent and it will be maintained by passport.  To maintain the persistent sessions working properly, we must serialize and deserialize the user each time request is made	<br>
+	<code style="color:red">passport.serializeUser(function (user, done) {<br>
+  		 return done(null, user._id);   <br>
+});<br><br>
+
+passport.deserializeUser(function (id, done) {<br>
+   var users = db.get().collection('users');<br>
+   users.findOne(new ObjectID(id), function (err, user) {<br>
+       if (err) {<br>
+           return done(err);<br>
+       } else {<br>
+           return done(null, user);<br>
+       }<br>
+   }); <br>
+});<br>
+</code>
+
+<p><b>Passport-2fa-totp:</b><br><br>
+This is a module of passport.js and is helpful to do two factor authentication using  time based one time password, username and password. If we have passport.js installed, we can use passport-2fa-totp. It is easy to add and implement this application.. Here we are using Google Authenticator for generating a time based one time password( TOTP).
+<br>The 2FA TOTP authentication mainly uses TwoFAStartegy  strategy authenticates a user using a username, password and TOTP value generated by a physical hardware device or software application. This requires two callbacks- one to verify username and password and the other to setup TOTP generator by sharing secret key as text or QR code. 
+<br><br>
+<code style="color:red">var GoogleAuthenticator = require('passport-2fa-totp').GoogeAuthenticator;<br>
+var TwoFAStartegy = require('passport-2fa-totp').Strategy;<br>
+var RememberMeStrategy = require('passport-remember-me').Strategy;</code><br><br>
+GoogleAuthenticator - provides utility methods for Google Authenticator<br>
+TwoFAStrategy - It uses passport-2fs-totp as a strategy to implement two factor authentication.
+<br>RemembermeStrategy - It uses passport-remember-me strategy to remember the user when the user visits the page again.<br>
+
+
+<!-- end of Implementation -->
+<!-- Screenshot of Implementation -->
+<p><b>Use of Google Authenticator to implement Two factor authentication</b><br><br>
+Depicting the working of our implementation of Two factor authentication incorporated to web application:
+
+<ul><li><b>Step 1:</b> User need to register by filling Username and Password fields (this acts as one layer authentication), 
+upon giving the information It will be asked to set “Google Authenticator”.<br><br>
+
+<img  src="images/Screenshot1.png" style="margin-left:160px"  alt="" width="400px" height="350px"></li><br>
+
+<li><b>Step 2:</b> After creating an account by registering it will prompt to scan the QR code as shown below for user verification.<br>
+QR code consists of a shared secret key which is being used to authenticate the user<br><br>
+
+<img  src="images/Screenshot2.png" style="margin-left:160px"  alt="" width="400px" height="350px"></li><br>
+
+<li><b>Step 3:</b> Below shows how the TOTP is generated when we scan QR code while registering an account. New TOTP(Time based One-time password) 
+is generated for every 30seconds. When we login the QR code is scanned to get authenticated for first time user.<br><br>
+
+<img  src="images/Screenshot4.png" style="margin-left:160px"  alt="" width="400px" height="350px"></li><br>
+
+<li><b>Step 4:</b> For login the code generated in the “Google Authenticator App” is being prompted to enter to authenticate the user. 
+This acts as a second factor of authentication.<br><br>
+
+<img  src="images/Screenshot3.png" style="margin-left:160px"  alt="" width="400px" height="350px"></li><br>
+
+<li><b>Step 5:</b> On Successful login to the profile, we can set up google Authenticator again to make sure we have secured authentication.
+<br><br>
+<img  src="images/Screenshot5.png" style="margin-left:160px"  alt="" width="400px" height="350px"></li></ul><br>
+</p>
+
+
+</article>
+<!-- end of Screenshot of Implementation -->
+
+
+<!-- Future of Authetication -->
+<article id="future" style="text-align:justify">
+<h5>Emerging Of Authentication</h5>
+<p>Numerous authentication emerges to prevent the possible attacks and to provide a secure environment for users. The International Journal titled “Survey on Risk Based Authentication” gives the outline of how 
+The Risk Based Authentication System provides security for applications based on the legitimacy of user logging in, allowing legitimate users to proceed unimpeded and block fraudsters.<br><br>This type of authentication models a risk based system for each user using their sensitivity of the information.
+This risk score is then evaluated against defined risk levels. After the risk level is identified, the user is granted or denied access. In cases of high risk, the user is prompted for additional authentication to confirm the user identity one more time and then the privileges are granted for the user.
+The following graphic illustrates how risk-based authentication works based on specific parameters:</p><br><br>
+<img  src="images/risk.png" style="margin-left:120px"  alt="" width="700px" height="700px" ><br><br><br>
+<a style="margin-left:120px" href="https://youtu.be/nkEgS43GLSY">https://youtu.be/nkEgS43GLSY</a><br>
+<iframe style="margin-left:120px" width="460" height="215" src="https://www.youtube.com/embed/nkEgS43GLSY?start=67" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+</article>
+<!-- end of Future of authentication -->
+
+
+
+<!-- Reference -->
+<article id="reference" style="text-align:justify">
+<h5 style="color:brown">Reference</h5>
+<ol><li><a href="https://pdfs.semanticscholar.org/5f3b/637401712103dcf1656884bf66701ddac3e2.pdf">https://pdfs.semanticscholar.org/5f3b/637401712103dcf1656884bf66701ddac3e2.pdf
+</a><br>This is one of the International Journal which discuss all the mobile authentication techniques and gives comparative with usage of the techniques.</li>
+
+
+
+<br><li><a href="https://www.kuppingercole.com/blog/singh/device-authentication-and-idot-for-iot"> https://www.kuppingercole.com/blog/singh/device-authentication-and-idot-for-iot
+</a><br>This Blog discusses how an effective authentication works in IoT and identity framework  for IoT devices.</li>
+<br><li><a href="http://ijarcsse.com/Before_August_2017/docs/papers/Volume_7/1_January2017/V7I1-01105.pdf">http://ijarcsse.com/Before_August_2017/docs/papers/Volume_7/1_January2017/V7I1-01105.pdf</a><br>Cloud services & Different kinds of Cloud Authentication is extracted from this link</li>
+<br><li><a href="https://searchsecurity.techtarget.com/definition/two-factor-authentication">href="https://searchsecurity.techtarget.com/definition/two-factor-authentication</a><br>Description and explanation of Two Factor Authentication extracted</li>
+<br><li><a href="https://www.npmjs.com/package/passport">https://www.npmjs.com/package/passport</a><br>A module of node.js is used for implementing two factor authentication using google authenticator</li>
+
+<h5 style="color:brown">Image Reference</h5>
+<ul><li><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSoEAHuIlC7irvL346YTD0a7rOt9ujh55vzj0tLH9H54fuzgUnV&usqp=CAU">https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSoEAHuIlC7irvL346YTD0a7rOt9ujh55vzj0tLH9H54fuzgUnV&usqp=CAU</a>
+<br>Diagram depicts how an IoT device is authenticated</li>
+<br><li><a href="https://www.stratospherenetworks.com/images/pic-cloud.jpg">https://www.stratospherenetworks.com/images/pic-cloud.jpg</a><br>Image showing Cloud services was extracted from this link</li>
+<br><li><a href="https://www.researchgate.net/profile/Mervat_Bamiah/publication/275036700/figure/fig2/AS:669016616087575@1536517399779/Cloud-Computing-Deployment-Models-Mell-and-Grance-2011.jpg">www.researchgate.net/profile/Mervat_Bamiah/publication/275036700/figure/fig2/AS:669016616087575@1536517399779/Cloud-Computing-Deployment-Models-Mell-and-Grance-2011.jpg</a>
+<br>Cloud Deployment diagram was extracted</li>
+<br><li><a href="https://www.netiq.com/documentation/access-manager-45/admin/data/riskunderstanding.html">https://www.netiq.com/documentation/access-manager-45/admin/data/riskunderstanding.html</a>
+<br>Image Of how Risk Based Authentication works was extracted</li>
+</article>
+<!-- end of Reference -->
+<footer>
+ 
+</footer>
+</div>
+</body>
+
+
+
+
+
+
